@@ -1,0 +1,73 @@
+	SMART-CONTRACT
+* CONFIGURACION DEL PROYECTO
+npm init -y
+npm install
+npm install dotenv @nomicfoundation/hardhat-toolbox
+npm install --save-dev hardhat
+npm install ethers //instalar
+* INICIALIZACION Y EJECUCION DE HARDHAT
+npx hardhat	//Ejecuta Hardhat y muestra un asistente interactivo para inicializar el proyecto. Si es la primera vez, puedes seleccionar "crear un proyecto básico" y Hardhat generará una estructura de carpetas (contracts/, scripts/, test/, etc.).
+* COMPILACION Y DESPLIEGUE
+npx hardhat node //*Ejecuta un nodo local de Ethereum simulado. Es útil para pruebas, ya que crea cuentas con fondos ficticios y permite desplegar contratos sin necesidad de una red pública.
+npx hardhat compile	//Compila los contratos inteligentes ubicados en la carpeta contracts/. Genera los artefactos (ABI y bytecode) que luego se usan para desplegarlos o interactuar con ellos.
+npx hardhat run scripts/deploy.js --network localhost //en otro cmd: Ejecuta el script deploy.js para desplegar el contrato en la red especificada (localhost, en este caso, el nodo local que corre con npx hardhat node).
+
+****************************************************************************
+	BACKEND
+npm init -y
+npm install express mongoose dotenv cors jsonwebtoken pdfkit bcryptjs //librerias mongo
+
+****************************************************************************
+POSTMAN
+Headers :Content-Type application/json
+
+ruta de registro: http://localhost:5000/api/auth/register
+body, raw : 
+{
+  "email": "admin@uce.edu.ec",
+  "password": "123456",
+  "cedula": "1234567890",
+  "role": "admin"
+}
+-------------------------------------------------------------------------
+ruta de login: http://localhost:5000/api/auth/login
+body, raw :
+{
+  "email": "admin@uce.edu.ec",
+  "password": "123456"
+}
+-------------------------------------------------------------------------
+rol de administrdor
+para emirt certificado
+
+ruta de emitir certificado: http://localhost:5000/api/certificates/issue
+body, raw:
+{
+  "instituteName": "Cambrige.",
+  "facultyName" : "IAI",
+  "studentName": "Julio Albertho C.",
+  "cedula": "1708757445",
+  "language": "Ingles",
+  "level": "B1"
+}
+
+**************************************************************************
+	FRON-END
+npm create vite@latest fronend
+npm install //dentro de la carpeta backend. mover con cd
+npm install -D tailwindcss@3 postcss autoprefixer
+npx tailwindcss init -p // desplegue en tailwind, configuraciones
+npm install react-router-dom // navegacion entre pagina
+npm install axios
+
+***********************************************************************
+	LEVANTAMIENTO DEL PROYECTO
+1.- mongod cmd
+2.- npx hardhat node  //carpeta smart contract
+3.- node server.js    //carpeta backend SERVIDOR
+4.- npm rum dev       //carpeta fronend
+
+nota. valida que siempre este corriendo Local:   http://localhost:5173/
+
+
+
